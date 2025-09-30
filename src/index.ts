@@ -32,3 +32,4 @@ export {useGeolocation} from "./useGeolocation";
 export {useReload} from "./useReload";
 export {useCookie} from "./useCookie";
 export * from './useElementReplace';
+export * from './useScriptLoader';
