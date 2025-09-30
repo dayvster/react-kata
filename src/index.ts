@@ -37,3 +37,4 @@ export {useFocusTrap} from './useFocusTrap';
 export {useElementSize} from './useElementSize';
 export {useElementPosition} from './useElementPosition';
 export {useKeySequence} from './useKeySequence';
+export {useQueue} from './useQueue';

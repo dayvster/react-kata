@@ -72,8 +72,19 @@ pnpm add dayvster-react-kit
 
 Import only the hooks you need:
 
+
 ```tsx
-import { useDebounce, useOnKeyPressed, useLocalStorage } from 'dayvster-react-kit';
+import { useQueue } from 'dayvster-react-kit';
+
+const { queue, enqueue, dequeue, clear, peek, processQueue, processing } = useQueue([1, 2, 3], {
+  onProcess: async (item) => {
+    await doAsyncThing(item);
+  },
+  autoProcess: true // automatically process items as they are enqueued
+});
+
+enqueue(4); // queue: [1,2,3,4]
+// Items will be processed one by one with onProcess
 ```
 
 ---
@@ -123,6 +134,7 @@ import { useDebounce, useOnKeyPressed, useLocalStorage } from 'dayvster-react-ki
 | `useElementSize`         | Get the size (width, height) of a DOM element via ref |
 | `useElementPosition`     | Get the position (top, left, right, bottom) of a DOM element via ref |
 | `useKeySequence`          | Detect a specific sequence of key presses and trigger a callback |
+| `useQueue`                | Manage a queue of items with enqueue, dequeue, clear, and peek operations |
 ## Example: useShimmer
 ```tsx
 import { useShimmer } from 'dayvster-react-kit';
