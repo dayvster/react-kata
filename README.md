@@ -10,7 +10,7 @@
 ![open issues](https://img.shields.io/github/issues/dayvster/react-kit?style=flat-square)
 ![license](https://img.shields.io/github/license/dayvster/react-kit?style=flat-square)
 
-React Utils is a growing collection of React hooks for state, effects, events, storage, and more. Designed for clarity, performance, and real-world use—with a clean API, SSR compatibility, and TypeScript support. Use it to save time and avoid boilerplate as the library evolves.
+React Utils is a set of React hooks for state, effects, events, storage, and more. Designed for clarity, performance, and real-world use—with a clean API, SSR compatibility, and TypeScript support. Use it to save time and avoid boilerplate as the library evolves.
 
 ## Features
 - **Comprehensive**: Covers state, events, effects, storage, media, and more
