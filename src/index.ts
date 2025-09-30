@@ -1,3 +1,4 @@
+export {useDocumentTitle} from "./useDocumentTitle";
 export {useWindowFocus} from "./useWindowFocus";
 export {useOnScreen} from "./useOnScreen";
 export {useDebounce} from "./useDebounce";

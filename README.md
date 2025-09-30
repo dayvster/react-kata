@@ -66,6 +66,16 @@ import { useOnKeyPressed, useDebounce, useLocalStorage } from 'dayvster-react-ki
 | `useReload`          | Returns a function to reload the current page         |
 | `useCookie`          | Get, set, and delete a cookie value                   |
 | `useWindowFocus`     | Track if the window is focused                        |
+| `useDocumentTitle`   | Set the document title, optionally restore on unmount |
+## Example: useDocumentTitle
+```tsx
+import { useDocumentTitle } from 'dayvster-react-kit';
+
+function TitleDemo() {
+  useDocumentTitle('My Page Title', { restoreOnUnmount: true });
+  return <div>Check the browser tab title!</div>;
+}
+```
 ## Example: useWindowFocus
 ```tsx
 import { useWindowFocus } from 'dayvster-react-kit';
