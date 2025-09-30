@@ -57,6 +57,7 @@ import { useOnKeyPressed, useDebounce, useLocalStorage } from 'dayvster-react-ki
 | `useOnScreenAdvanced` | Track if an element is visible with threshold/duration/callback |
 | `useWhyDidYouUpdate` | Log changed props between renders for a component |
 | `useMount`           | Run a callback once when the component mounts         |
+| `useUnmount`         | Run a callback once when the component unmounts       |
 
 ## Example
 ```tsx
@@ -112,6 +113,19 @@ import { useMount } from 'dayvster-react-kit';
 function Demo() {
   useMount(() => {
     alert('Mounted!');
+  });
+  return <div>Component mounted</div>;
+}
+```
+
+## Example: useUnmount
+```tsx
+import React from 'react';
+import { useUnmount } from 'dayvster-react-kit';
+
+function Demo() {
+  useUnmount(() => {
+    alert('Unmounted!');
   });
   return <div>Component mounted</div>;
 }
