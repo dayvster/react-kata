@@ -63,6 +63,7 @@ import { useOnKeyPressed, useDebounce, useLocalStorage } from 'dayvster-react-ki
 | `useTheme`           | Track and toggle between light/dark color schemes     |
 | `usePrefersReducedMotion` | Track if the user prefers reduced motion (accessibility) |
 | `useGeolocation`     | Track the user's geolocation (latitude, longitude, etc.) |
+| `useReload`          | Returns a function to reload the current page         |
 
 ## Example
 ```tsx
@@ -209,6 +210,18 @@ function Demo() {
       <div>Longitude: {position?.coords.longitude}</div>
     </div>
   );
+}
+```
+
+## Example: useReload
+```tsx
+import React from 'react';
+import { useReload } from 'dayvster-react-kit';
+
+function Demo() {
+  // Only reload if user confirms
+  const reload = useReload(() => window.confirm('Reload?'));
+  return <button onClick={reload}>Reload Page</button>;
 }
 ```
 

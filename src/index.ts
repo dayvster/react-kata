@@ -25,3 +25,4 @@ export {useCopyToClipboard} from "./useCopyToClipboard";
 export {useTheme} from "./useTheme";
 export {usePrefersReducedMotion} from "./usePrefersReducedMotion";
 export {useGeolocation} from "./useGeolocation";
+export {useReload} from "./useReload";
