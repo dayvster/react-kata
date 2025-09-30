@@ -22,7 +22,7 @@ export function useCookie(
     sameSite?: 'Strict' | 'Lax' | 'None';
   }
 ): [string | null, (value: string, opts?: typeof options) => void, () => void] {
-  // Helper to get cookie value
+  
   const getCookie = useCallback((): string | null => {
     const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]*)'));
     return match ? decodeURIComponent(match[2]) : null;
@@ -30,7 +30,7 @@ export function useCookie(
 
   const [value, setValue] = useState<string | null>(() => getCookie());
 
-  // Helper to set cookie
+  
   const setCookie = useCallback(
     (val: string, opts: typeof options = {}) => {
       let cookieStr = `${name}=${encodeURIComponent(val)}`;
@@ -48,14 +48,13 @@ export function useCookie(
     [name]
   );
 
-  // Helper to delete cookie
+  
   const deleteCookie = useCallback(() => {
     document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/`;
     setValue(null);
   }, [name]);
 
-  // Keep value in sync with document.cookie
-  // (for external changes, e.g. other tabs, polling could be added)
+  
 
   return [value, setCookie, deleteCookie];
 }

@@ -46,7 +46,7 @@ export function useFocusTrap(enabled: boolean = true) {
       }
     }
     node.addEventListener('keydown', handleKeyDown);
-    // Optionally focus first element on mount
+    
     const focusable = getFocusable();
     if (focusable.length) focusable[0].focus();
     return () => {

@@ -11,7 +11,7 @@ import { useMemo } from 'react';
  *
  * @example
  * const shimmer = useShimmer(400, 300);
- * <img src={`data:image/svg+xml;utf8,${encodeURIComponent(shimmer)}`} />
+ *
  */
 export function useShimmer(
   width: number,

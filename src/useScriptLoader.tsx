@@ -38,14 +38,15 @@ export function useScriptLoader(
       script = document.createElement('script');
       script.src = src;
       Object.entries(options || {}).forEach(([key, value]) => {
-        // @ts-ignore
-        script[key] = value;
+        if (script) {
+          (script as any)[key] = value;
+        }
       });
       created = true;
       document.body.appendChild(script);
     }
     setRef(script);
-    // If script is already loaded, set status immediately
+    
     if (script.getAttribute('data-loaded') === 'true') {
       setStatus('loaded');
     } else {
@@ -64,8 +65,7 @@ export function useScriptLoader(
     return () => {
       script?.removeEventListener('load', onLoad);
       script?.removeEventListener('error', onError);
-      // Optionally remove script if created by this hook
-      // if (created && script?.parentNode) script.parentNode.removeChild(script);
+      
     };
   }, [src, JSON.stringify(options)]);
 

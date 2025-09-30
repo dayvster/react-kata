@@ -17,7 +17,7 @@ export function useTheme(
     return themes.includes("auto") ? "auto" : themes[0];
   });
 
-  // Set theme on DOM and localStorage
+  
   useEffect(() => {
     let applied = theme;
     if (theme === "auto") {
@@ -27,7 +27,7 @@ export function useTheme(
     document.documentElement.setAttribute('data-theme', applied);
   }, [theme]);
 
-  // Listen for system theme changes if "auto"
+  
   useEffect(() => {
     if (theme !== "auto") return;
     const mq = window.matchMedia('(prefers-color-scheme: dark)');

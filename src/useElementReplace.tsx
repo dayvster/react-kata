@@ -13,7 +13,7 @@ import { useMemo } from 'react';
  *
  * @example
  * const placeholder = useElementReplace(<div className="my-loader" />, 100, 40);
- * // Use {placeholder} in your component tree
+ *
  */
 export function useElementReplace<T extends JSX.Element>(
   element: T,

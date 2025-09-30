@@ -28,7 +28,7 @@ export function useWhyDidYouUpdate<T extends Record<string, any>>(
         if (callback) {
           callback(changedProps);
         } else {
-          // eslint-disable-next-line no-console
+          
           console.log(`[why-did-you-update] ${name}`, changedProps);
         }
       }
