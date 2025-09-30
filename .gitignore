@@ -1,0 +1,47 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Env files
+.env
+.env.*
+
+# VSCode settings
+.vscode/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Coverage
+coverage/
+
+# Misc
+*.log
+*.tgz
+
+# IDE files
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Mac system files
+.AppleDouble
+.LSOverride
+
+# Linux trash
+.Trash-*
+
+# Test output
+junit.xml
