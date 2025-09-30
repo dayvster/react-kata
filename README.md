@@ -67,6 +67,18 @@ import { useOnKeyPressed, useDebounce, useLocalStorage } from 'dayvster-react-ki
 | `useCookie`          | Get, set, and delete a cookie value                   |
 | `useWindowFocus`     | Track if the window is focused                        |
 | `useDocumentTitle`   | Set the document title, optionally restore on unmount |
+| `useImagePreload`    | Preload an image and track its loading status          |
+## Example: useImagePreload
+```tsx
+import { useImagePreload } from 'dayvster-react-kit';
+
+function ImageDemo({ src }: { src: string }) {
+  const { status, error } = useImagePreload(src);
+  if (status === 'loading') return <div>Loading...</div>;
+  if (status === 'error') return <div>Error loading image: {error?.message}</div>;
+  return <img src={src} alt="Preloaded" />;
+}
+```
 ## Example: useDocumentTitle
 ```tsx
 import { useDocumentTitle } from 'dayvster-react-kit';

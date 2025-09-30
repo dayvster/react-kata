@@ -1,3 +1,4 @@
+export {useImagePreload} from "./useImagePreload";
 export {useDocumentTitle} from "./useDocumentTitle";
 export {useWindowFocus} from "./useWindowFocus";
 export {useOnScreen} from "./useOnScreen";
