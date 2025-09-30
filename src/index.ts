@@ -36,3 +36,4 @@ export * from './useScriptLoader';
 export * from './useFocusTrap';
 export * from './useElementSize';
 export * from './useElementPosition';
+export * from './useKeySequence';

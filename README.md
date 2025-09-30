@@ -74,6 +74,7 @@ import { useOnKeyPressed, useDebounce, useLocalStorage } from 'dayvster-react-ki
 | `useFocusTrap`          | Trap keyboard focus within a container (e.g., modal) |
 | `useElementSize`         | Get the size (width, height) of a DOM element via ref |
 | `useElementPosition`     | Get the position (top, left, right, bottom) of a DOM element via ref |
+| `useKeySequence`          | Detect a specific sequence of key presses and trigger a callback |
 ## Example: useShimmer
 ```tsx
 import { useShimmer } from 'dayvster-react-kit';
@@ -148,6 +149,15 @@ function PositionDemo() {
       Top: {pos.top}, Left: {pos.left}, Right: {pos.right}, Bottom: {pos.bottom}
     </div>
   );
+}
+```
+## Example: useKeySequence
+```tsx
+import { useKeySequence } from 'dayvster-react-kit';
+
+function SecretCodeDemo() {
+  useKeySequence(['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown'], () => alert('Konami!'));
+  return <div>Try the secret key sequence!</div>;
 }
 ```
 ```
