@@ -2,9 +2,9 @@
 # React Utils
 
 
-![npm version](https://img.shields.io/npm/v/@yourname/react-utils?style=flat-square)
-![npm downloads](https://img.shields.io/npm/dm/@yourname/react-utils?style=flat-square)
-![types](https://img.shields.io/npm/types/@yourname/react-utils?style=flat-square)
+![npm version](https://img.shields.io/npm/v/dayvster-react-kit?style=flat-square)
+![npm downloads](https://img.shields.io/npm/dm/dayvster-react-kit?style=flat-square)
+![types](https://img.shields.io/npm/types/dayvster-react-kit?style=flat-square)
 ![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4?style=flat-square)
 ![last commit](https://img.shields.io/github/last-commit/dayvster/react-kit?style=flat-square)
 ![open issues](https://img.shields.io/github/issues/dayvster/react-kit?style=flat-square)
@@ -21,15 +21,17 @@ React Utils is a growing collection of React hooks for state, effects, events, s
 
 ## Installation
 ```bash
-npm install @yourname/react-utils
+npm install dayvster-react-kit
+```
+[![npm](https://img.shields.io/npm/v/dayvster-react-kit?style=flat-square)](https://www.npmjs.com/package/dayvster-react-kit)
 ```
 
 ## Usage
 Import any hook you need:
-```tsx
+import { useDebounce, useOnKeyPressed, useLocalStorage } from 'dayvster-react-kit';
 import { useDebounce, useOnKeyPressed, useLocalStorage } from '@dayvster/react-kit';
 ```
-
+import { useOnKeyPressed, useDebounce, useLocalStorage } from 'dayvster-react-kit';
 ## Hooks Overview
 | Hook                | Description                                      |
 |---------------------|--------------------------------------------------|
