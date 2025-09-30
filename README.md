@@ -64,6 +64,23 @@ import { useOnKeyPressed, useDebounce, useLocalStorage } from 'dayvster-react-ki
 | `usePrefersReducedMotion` | Track if the user prefers reduced motion (accessibility) |
 | `useGeolocation`     | Track the user's geolocation (latitude, longitude, etc.) |
 | `useReload`          | Returns a function to reload the current page         |
+| `useCookie`          | Get, set, and delete a cookie value                   |
+## Example: useCookie
+```tsx
+import { useCookie } from 'dayvster-react-kit';
+
+function CookieDemo() {
+  const [cookie, setCookie, deleteCookie] = useCookie('myCookie');
+
+  return (
+    <div>
+      <div>Cookie value: {cookie}</div>
+      <button onClick={() => setCookie('newValue')}>Set Cookie</button>
+      <button onClick={deleteCookie}>Delete Cookie</button>
+    </div>
+  );
+}
+```
 
 ## Example
 ```tsx
