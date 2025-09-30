@@ -23,3 +23,4 @@ export {useMount} from "./useMount";
 export {useUnmount} from "./useUnmount";
 export {useCopyToClipboard} from "./useCopyToClipboard";
 export {useTheme} from "./useTheme";
+export {usePrefersReducedMotion} from "./usePrefersReducedMotion";

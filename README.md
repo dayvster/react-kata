@@ -61,6 +61,7 @@ import { useOnKeyPressed, useDebounce, useLocalStorage } from 'dayvster-react-ki
 | `useCopyToClipboard` | Copy text to clipboard and get success/error status   |
 | `useIdle`            | (WIP) Track if the user is idle for a given timeout. Not yet stable. |
 | `useTheme`           | Track and toggle between light/dark color schemes     |
+| `usePrefersReducedMotion` | Track if the user prefers reduced motion (accessibility) |
 
 ## Example
 ```tsx
@@ -178,6 +179,17 @@ function Demo() {
       <button onClick={() => setTheme("auto")}>Auto</button>
     </div>
   );
+}
+```
+
+## Example: usePrefersReducedMotion
+```tsx
+import React from 'react';
+import { usePrefersReducedMotion } from 'dayvster-react-kit';
+
+function Demo() {
+  const prefersReducedMotion = usePrefersReducedMotion();
+  return <div>{prefersReducedMotion ? 'Reduced motion enabled' : 'Normal motion'}</div>;
 }
 ```
 
