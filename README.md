@@ -1,4 +1,3 @@
-
 # React Utils
 
 
@@ -55,6 +54,8 @@ import { useOnKeyPressed, useDebounce, useLocalStorage } from 'dayvster-react-ki
 | `useHovered`        | Track hover state of an element                  |
 | `useEventListener`  | Add and clean up event listeners                 |
 | `useOnScreen`       | Track if an element is visible in the viewport   |
+| `useOnScreenAdvanced` | Track if an element is visible with threshold/duration/callback |
+| `useWhyDidYouUpdate` | Log changed props between renders for a component |
 
 ## Example
 ```tsx
@@ -82,6 +83,23 @@ function Demo() {
       </div>
     </div>
   );
+}
+```
+
+## Example: useWhyDidYouUpdate
+```tsx
+import React, { useState } from 'react';
+import { useWhyDidYouUpdate } from 'dayvster-react-kit';
+
+function Demo(props) {
+  // Logs changed props to console by default
+  useWhyDidYouUpdate('Demo', props);
+  // Or provide a callback to handle changes
+  useWhyDidYouUpdate('Demo', props, changedProps => {
+    // Custom handling, e.g. send to analytics
+    alert('Changed: ' + JSON.stringify(changedProps));
+  });
+  return <div>{props.value}</div>;
 }
 ```
 

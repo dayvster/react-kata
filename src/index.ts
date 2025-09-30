@@ -17,3 +17,5 @@ export {useOnKeyPressed} from "./useOnKeyPressed";
 export {useFocus} from "./useFocus";
 export {useHovered} from "./useHover";
 export {useFetch} from "./useFetch";
+export {useOnScreenAdvanced} from "./useOnScreenAdvanced";
+export {useWhyDidYouUpdate} from "./useWhyDidYouUpdate";
