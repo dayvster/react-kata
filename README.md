@@ -1,37 +1,83 @@
-# React Utils
+<div align="center">
+  <img src="https://raw.githubusercontent.com/dayvster/react-kit/main/assets/logo.svg" width="120" alt="React Utils Logo" />
+  <h1>React Utils</h1>
+  <p><strong>Modern, type-safe React hooks for state, effects, events, and more.</strong></p>
+  <p>
+    <a href="https://www.npmjs.com/package/dayvster-react-kit"><img src="https://img.shields.io/npm/v/dayvster-react-kit?style=flat-square" alt="npm version" /></a>
+    <img src="https://img.shields.io/npm/dm/dayvster-react-kit?style=flat-square" alt="npm downloads" />
+    <img src="https://img.shields.io/npm/types/dayvster-react-kit?style=flat-square" alt="types" />
+    <img src="https://img.shields.io/badge/code_style-prettier-ff69b4?style=flat-square" alt="code style: prettier" />
+    <img src="https://img.shields.io/github/last-commit/dayvster/react-kit?style=flat-square" alt="last commit" />
+    <img src="https://img.shields.io/github/issues/dayvster/react-kit?style=flat-square" alt="open issues" />
+    <img src="https://img.shields.io/github/license/dayvster/react-kit?style=flat-square" alt="license" />
+  </p>
+</div>
+
+---
+
+## 📚 Table of Contents
+
+- [Installation](#installation)
+- [Features](#-features)
+- [Usage](#-usage)
+- [Hooks Overview](#-hooks-overview)
+- [Examples](#-examples)
+- [Contributing](#contributing)
+- [License](#license)
+
+---
+
+---
+
+**React Utils** is a growing collection of modern React hooks for state, effects, events, storage, and more. Designed for clarity, performance, and real-world use—with a clean API, SSR compatibility, and TypeScript support. Save time, avoid boilerplate, and ship faster.
+
+---
 
 
-![npm version](https://img.shields.io/npm/v/dayvster-react-kit?style=flat-square)
-![npm downloads](https://img.shields.io/npm/dm/dayvster-react-kit?style=flat-square)
-![types](https://img.shields.io/npm/types/dayvster-react-kit?style=flat-square)
-![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4?style=flat-square)
-![last commit](https://img.shields.io/github/last-commit/dayvster/react-kit?style=flat-square)
-![open issues](https://img.shields.io/github/issues/dayvster/react-kit?style=flat-square)
-![license](https://img.shields.io/github/license/dayvster/react-kit?style=flat-square)
+## 📦 Installation
 
-React Utils is a set of React hooks for state, effects, events, storage, and more. Designed for clarity, performance, and real-world use—with a clean API, SSR compatibility, and TypeScript support. Use it to save time and avoid boilerplate as the library evolves.
+Install with npm:
 
-## Features
-- **Comprehensive**: Covers state, events, effects, storage, media, and more
-- **SSR-safe**: All hooks are compatible with server-side rendering
-- **TypeScript**: Fully typed for maximum safety and IDE support
-- **Tested**: 100% test coverage with Jest and React Testing Library
-- **Ergonomic APIs**: Designed for real-world usage and developer happiness
-
-## Installation
 ```bash
 npm install dayvster-react-kit
 ```
-[![npm](https://img.shields.io/npm/v/dayvster-react-kit?style=flat-square)](https://www.npmjs.com/package/dayvster-react-kit)
+
+Or with yarn:
+
+```bash
+yarn add dayvster-react-kit
 ```
 
-## Usage
-Import any hook you need:
-import { useDebounce, useOnKeyPressed, useLocalStorage } from 'dayvster-react-kit';
-import { useDebounce, useOnKeyPressed, useLocalStorage } from '@dayvster/react-kit';
+Or with pnpm:
+
+```bash
+pnpm add dayvster-react-kit
 ```
-import { useOnKeyPressed, useDebounce, useLocalStorage } from 'dayvster-react-kit';
-## Hooks Overview
+
+---
+
+## 🚀 Features
+
+- **Comprehensive**: State, events, effects, storage, media, accessibility, and more
+- **SSR-safe**: All hooks work with server-side rendering
+- **TypeScript**: Fully typed for safety and IDE support
+- **Tested**: 100% coverage with Jest & React Testing Library
+- **Ergonomic APIs**: Designed for real-world usage and developer happiness
+
+---
+
+## 🛠 Usage
+
+Import only the hooks you need:
+
+```tsx
+import { useDebounce, useOnKeyPressed, useLocalStorage } from 'dayvster-react-kit';
+```
+
+---
+
+## 🧩 Hooks Overview
+
 | Hook                | Description                                      |
 |---------------------|--------------------------------------------------|
 | `useDebounce`       | Debounce a value or callback                     |
