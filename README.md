@@ -54,10 +54,13 @@ import { useOnKeyPressed, useDebounce, useLocalStorage } from 'dayvster-react-ki
 | `useFocus`          | Track focus state of an element                  |
 | `useHovered`        | Track hover state of an element                  |
 | `useEventListener`  | Add and clean up event listeners                 |
+| `useOnScreen`       | Track if an element is visible in the viewport   |
 
 ## Example
 ```tsx
-import { useOnKeyPressed, useDebounce, useLocalStorage } from '@dayvster/react-kit';
+import { useOnKeyPressed, useDebounce, useLocalStorage, useOnScreen } from 'dayvster-react-kit';
+  const ref = React.useRef(null);
+  const isOnScreen = useOnScreen(ref);
 import { useFetch } from 'dayvster-react-kit';
 
 function Demo() {
@@ -74,6 +77,9 @@ function Demo() {
       <p>Debounced value: {debouncedValue}</p>
       <p>API Data: {loading ? 'Loading...' : error ? error.message : JSON.stringify(data)}</p>
       <button onClick={refetch}>Refetch</button>
+      <div ref={ref} style={{ height: 100, background: isOnScreen ? 'lime' : 'tomato' }}>
+        {isOnScreen ? 'On Screen' : 'Off Screen'}
+      </div>
     </div>
   );
 }
