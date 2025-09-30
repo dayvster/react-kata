@@ -71,6 +71,7 @@ import { useOnKeyPressed, useDebounce, useLocalStorage } from 'dayvster-react-ki
 | `useShimmer`         | Generate a shimmer SVG placeholder for loading content |
 | `useElementReplace`   | Use a custom React element as a placeholder or replacement |
 | `useScriptLoader`      | Dynamically load an external script and track its status |
+| `useFocusTrap`          | Trap keyboard focus within a container (e.g., modal) |
 ## Example: useShimmer
 ```tsx
 import { useShimmer } from 'dayvster-react-kit';
@@ -103,6 +104,22 @@ function ScriptDemo() {
   if (status === 'loading') return <div>Loading script...</div>;
   if (status === 'error') return <div>Error: {error?.message}</div>;
   return <div>Script loaded!</div>;
+}
+```
+## Example: useFocusTrap
+```tsx
+import { useFocusTrap } from 'dayvster-react-kit';
+
+function Modal({ open }: { open: boolean }) {
+  const ref = useFocusTrap(open);
+  if (!open) return null;
+  return (
+    <div ref={ref} tabIndex={-1} style={{ outline: '2px solid #09f', padding: 20 }}>
+      <button>First</button>
+      <input placeholder="Second" />
+      <button>Last</button>
+    </div>
+  );
 }
 ```
 ```
