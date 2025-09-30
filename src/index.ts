@@ -21,3 +21,4 @@ export {useOnScreenAdvanced} from "./useOnScreenAdvanced";
 export {useWhyDidYouUpdate} from "./useWhyDidYouUpdate";
 export {useMount} from "./useMount";
 export {useUnmount} from "./useUnmount";
+export {useCopyToClipboard} from "./useCopyToClipboard";

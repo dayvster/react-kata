@@ -58,6 +58,7 @@ import { useOnKeyPressed, useDebounce, useLocalStorage } from 'dayvster-react-ki
 | `useWhyDidYouUpdate` | Log changed props between renders for a component |
 | `useMount`           | Run a callback once when the component mounts         |
 | `useUnmount`         | Run a callback once when the component unmounts       |
+| `useCopyToClipboard` | Copy text to clipboard and get success/error status   |
 
 ## Example
 ```tsx
@@ -128,6 +129,23 @@ function Demo() {
     alert('Unmounted!');
   });
   return <div>Component mounted</div>;
+}
+```
+
+## Example: useCopyToClipboard
+```tsx
+import React from 'react';
+import { useCopyToClipboard } from 'dayvster-react-kit';
+
+function Demo() {
+  const [copy, { success, error }] = useCopyToClipboard();
+  return (
+    <div>
+      <button onClick={() => copy('Hello world!')}>Copy</button>
+      {success && <span>Copied!</span>}
+      {error && <span>Error: {error}</span>}
+    </div>
+  );
 }
 ```
 
