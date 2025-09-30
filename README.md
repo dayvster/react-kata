@@ -50,6 +50,7 @@ import { useOnKeyPressed, useDebounce, useLocalStorage } from 'dayvster-react-ki
 | `useScrollPosition` | Track window scroll position (throttled)         |
 | `useKeyPress`       | Get info about the last key pressed              |
 | `useOnKeyPressed`   | Run a callback when a specific key is pressed    |
+| `useFetch`          | Fetch data from an API endpoint                  |
 | `useFocus`          | Track focus state of an element                  |
 | `useHovered`        | Track hover state of an element                  |
 | `useEventListener`  | Add and clean up event listeners                 |
@@ -57,18 +58,22 @@ import { useOnKeyPressed, useDebounce, useLocalStorage } from 'dayvster-react-ki
 ## Example
 ```tsx
 import { useOnKeyPressed, useDebounce, useLocalStorage } from '@dayvster/react-kit';
+import { useFetch } from 'dayvster-react-kit';
 
 function Demo() {
   const { key } = useKeyPress();
   useOnKeyPressed('Enter', () => alert('Enter pressed!'));
   const [value, setValue] = useLocalStorage('my-key', '');
   const debouncedValue = useDebounce(value, 300);
+  const { data, error, loading, refetch } = useFetch('https://api.example.com/data');
 
   return (
     <div>
       <p>Last key pressed: {key}</p>
       <input value={value} onChange={e => setValue(e.target.value)} />
       <p>Debounced value: {debouncedValue}</p>
+      <p>API Data: {loading ? 'Loading...' : error ? error.message : JSON.stringify(data)}</p>
+      <button onClick={refetch}>Refetch</button>
     </div>
   );
 }

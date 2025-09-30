@@ -15,3 +15,4 @@ export {useKeyPress} from "./useKeyPress";
 export {useOnKeyPressed} from "./useOnKeyPressed";
 export {useFocus} from "./useFocus";
 export {useHovered} from "./useHover";
+export {useFetch} from "./useFetch";
