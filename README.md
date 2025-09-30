@@ -62,6 +62,7 @@ import { useOnKeyPressed, useDebounce, useLocalStorage } from 'dayvster-react-ki
 | `useIdle`            | (WIP) Track if the user is idle for a given timeout. Not yet stable. |
 | `useTheme`           | Track and toggle between light/dark color schemes     |
 | `usePrefersReducedMotion` | Track if the user prefers reduced motion (accessibility) |
+| `useGeolocation`     | Track the user's geolocation (latitude, longitude, etc.) |
 
 ## Example
 ```tsx
@@ -190,6 +191,24 @@ import { usePrefersReducedMotion } from 'dayvster-react-kit';
 function Demo() {
   const prefersReducedMotion = usePrefersReducedMotion();
   return <div>{prefersReducedMotion ? 'Reduced motion enabled' : 'Normal motion'}</div>;
+}
+```
+
+## Example: useGeolocation
+```tsx
+import React from 'react';
+import { useGeolocation } from 'dayvster-react-kit';
+
+function Demo() {
+  const { position, error, loading } = useGeolocation();
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+  return (
+    <div>
+      <div>Latitude: {position?.coords.latitude}</div>
+      <div>Longitude: {position?.coords.longitude}</div>
+    </div>
+  );
 }
 ```
 
