@@ -1,5 +1,5 @@
 {
-  "name": "@dayvster/react-kit",
+  "name": "dayvster-react-kit",
   "version": "0.1.0",
   "description": "A growing collection of modern React hooks for state, effects, events, and more. Clean API, SSR-safe, and TypeScript ready.",
   "author": "Dave <dayvster@github>",
