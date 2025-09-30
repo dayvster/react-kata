@@ -19,3 +19,4 @@ export {useHovered} from "./useHover";
 export {useFetch} from "./useFetch";
 export {useOnScreenAdvanced} from "./useOnScreenAdvanced";
 export {useWhyDidYouUpdate} from "./useWhyDidYouUpdate";
+export {useMount} from "./useMount";
