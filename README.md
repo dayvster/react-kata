@@ -59,6 +59,7 @@ import { useOnKeyPressed, useDebounce, useLocalStorage } from 'dayvster-react-ki
 | `useMount`           | Run a callback once when the component mounts         |
 | `useUnmount`         | Run a callback once when the component unmounts       |
 | `useCopyToClipboard` | Copy text to clipboard and get success/error status   |
+| `useIdle`            | (WIP) Track if the user is idle for a given timeout. Not yet stable. |
 
 ## Example
 ```tsx
@@ -146,6 +147,17 @@ function Demo() {
       {error && <span>Error: {error}</span>}
     </div>
   );
+}
+```
+
+## Example: useIdle
+```tsx
+import React from 'react';
+import { useIdle } from 'dayvster-react-kit';
+
+function Demo() {
+  const isIdle = useIdle(5000); // 5 seconds
+  return <div>{isIdle ? 'Idle' : 'Active'}</div>;
 }
 ```
 
