@@ -69,6 +69,7 @@ import { useOnKeyPressed, useDebounce, useLocalStorage } from 'dayvster-react-ki
 | `useDocumentTitle`   | Set the document title, optionally restore on unmount |
 | `useImagePreload`    | Preload an image and track its loading status          |
 | `useShimmer`         | Generate a shimmer SVG placeholder for loading content |
+| `useElementReplace`   | Use a custom React element as a placeholder or replacement |
 ## Example: useShimmer
 ```tsx
 import { useShimmer } from 'dayvster-react-kit';
@@ -76,6 +77,21 @@ import { useShimmer } from 'dayvster-react-kit';
 function ShimmerDemo() {
   const shimmer = useShimmer(400, 300);
   return <img src={`data:image/svg+xml;utf8,${encodeURIComponent(shimmer)}`} alt="Loading..." />;
+}
+```
+## Example: useElementReplace
+```tsx
+import { useElementReplace } from 'dayvster-react-kit';
+
+function CustomLoaderDemo() {
+  const placeholder = useElementReplace(
+    <div style={{ background: '#eee', borderRadius: 8, display: 'inline-block' }}>
+      Loading...
+    </div>,
+    120,
+    40
+  );
+  return placeholder;
 }
 ```
 ## Example: useImagePreload
