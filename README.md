@@ -68,6 +68,16 @@ import { useOnKeyPressed, useDebounce, useLocalStorage } from 'dayvster-react-ki
 | `useWindowFocus`     | Track if the window is focused                        |
 | `useDocumentTitle`   | Set the document title, optionally restore on unmount |
 | `useImagePreload`    | Preload an image and track its loading status          |
+| `useShimmer`         | Generate a shimmer SVG placeholder for loading content |
+## Example: useShimmer
+```tsx
+import { useShimmer } from 'dayvster-react-kit';
+
+function ShimmerDemo() {
+  const shimmer = useShimmer(400, 300);
+  return <img src={`data:image/svg+xml;utf8,${encodeURIComponent(shimmer)}`} alt="Loading..." />;
+}
+```
 ## Example: useImagePreload
 ```tsx
 import { useImagePreload } from 'dayvster-react-kit';
