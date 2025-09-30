@@ -27,7 +27,7 @@ npm install @yourname/react-utils
 ## Usage
 Import any hook you need:
 ```tsx
-import { useDebounce, useOnKeyPressed, useLocalStorage } from '@yourname/react-utils';
+import { useDebounce, useOnKeyPressed, useLocalStorage } from '@dayvster/react-kit';
 ```
 
 ## Hooks Overview
@@ -54,7 +54,7 @@ import { useDebounce, useOnKeyPressed, useLocalStorage } from '@yourname/react-u
 
 ## Example
 ```tsx
-import { useOnKeyPressed, useDebounce, useLocalStorage } from '@yourname/react-utils';
+import { useOnKeyPressed, useDebounce, useLocalStorage } from '@dayvster/react-kit';
 
 function Demo() {
   const { key } = useKeyPress();

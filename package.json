@@ -1,8 +1,8 @@
 {
-  "name": "@yourname/react-utils",
+  "name": "@dayvster/react-kit",
   "version": "0.1.0",
-  "description": "A collection of useful React hooks and utilities",
-  "author": "Your Name",
+  "description": "A growing collection of modern React hooks for state, effects, events, and more. Clean API, SSR-safe, and TypeScript ready.",
+  "author": "Dave <dayvster@github>",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -21,6 +21,91 @@
       "import": "./dist/useDebounce.mjs",
       "require": "./dist/useDebounce.js",
       "types": "./dist/useDebounce.d.ts"
+    },
+    "./useThrottle": {
+      "import": "./dist/useThrottle.mjs",
+      "require": "./dist/useThrottle.js",
+      "types": "./dist/useThrottle.d.ts"
+    },
+    "./useInterval": {
+      "import": "./dist/useInterval.mjs",
+      "require": "./dist/useInterval.js",
+      "types": "./dist/useInterval.d.ts"
+    },
+    "./useTimeout": {
+      "import": "./dist/useTimeout.mjs",
+      "require": "./dist/useTimeout.js",
+      "types": "./dist/useTimeout.d.ts"
+    },
+    "./useLocalStorage": {
+      "import": "./dist/useLocalStorage.mjs",
+      "require": "./dist/useLocalStorage.js",
+      "types": "./dist/useLocalStorage.d.ts"
+    },
+    "./useSessionStorage": {
+      "import": "./dist/useSessionStorage.mjs",
+      "require": "./dist/useSessionStorage.js",
+      "types": "./dist/useSessionStorage.d.ts"
+    },
+    "./usePrevious": {
+      "import": "./dist/usePrevious.mjs",
+      "require": "./dist/usePrevious.js",
+      "types": "./dist/usePrevious.d.ts"
+    },
+    "./useClickOutside": {
+      "import": "./dist/useClickOutside.mjs",
+      "require": "./dist/useClickOutside.js",
+      "types": "./dist/useClickOutside.d.ts"
+    },
+    "./useToggle": {
+      "import": "./dist/useToggle.mjs",
+      "require": "./dist/useToggle.js",
+      "types": "./dist/useToggle.d.ts"
+    },
+    "./useUpdateEffect": {
+      "import": "./dist/useUpdateEffect.mjs",
+      "require": "./dist/useUpdateEffect.js",
+      "types": "./dist/useUpdateEffect.d.ts"
+    },
+    "./useMediaQuery": {
+      "import": "./dist/useMediaQuery.mjs",
+      "require": "./dist/useMediaQuery.js",
+      "types": "./dist/useMediaQuery.d.ts"
+    },
+    "./useWindowSize": {
+      "import": "./dist/useWindowSize.mjs",
+      "require": "./dist/useWindowSize.js",
+      "types": "./dist/useWindowSize.d.ts"
+    },
+    "./useScrollPosition": {
+      "import": "./dist/useScrollPosition.mjs",
+      "require": "./dist/useScrollPosition.js",
+      "types": "./dist/useScrollPosition.d.ts"
+    },
+    "./useKeyPress": {
+      "import": "./dist/useKeyPress.mjs",
+      "require": "./dist/useKeyPress.js",
+      "types": "./dist/useKeyPress.d.ts"
+    },
+    "./useOnKeyPressed": {
+      "import": "./dist/useOnKeyPressed.mjs",
+      "require": "./dist/useOnKeyPressed.js",
+      "types": "./dist/useOnKeyPressed.d.ts"
+    },
+    "./useFocus": {
+      "import": "./dist/useFocus.mjs",
+      "require": "./dist/useFocus.js",
+      "types": "./dist/useFocus.d.ts"
+    },
+    "./useHovered": {
+      "import": "./dist/useHover.mjs",
+      "require": "./dist/useHover.js",
+      "types": "./dist/useHover.d.ts"
+    },
+    "./useEventListener": {
+      "import": "./dist/useEventListener.mjs",
+      "require": "./dist/useEventListener.js",
+      "types": "./dist/useEventListener.d.ts"
     }
   },
   "scripts": {
