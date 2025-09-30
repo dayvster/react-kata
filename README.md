@@ -65,6 +65,16 @@ import { useOnKeyPressed, useDebounce, useLocalStorage } from 'dayvster-react-ki
 | `useGeolocation`     | Track the user's geolocation (latitude, longitude, etc.) |
 | `useReload`          | Returns a function to reload the current page         |
 | `useCookie`          | Get, set, and delete a cookie value                   |
+| `useWindowFocus`     | Track if the window is focused                        |
+## Example: useWindowFocus
+```tsx
+import { useWindowFocus } from 'dayvster-react-kit';
+
+function FocusDemo() {
+  const isFocused = useWindowFocus();
+  return <div>Window is {isFocused ? 'focused' : 'blurred'}</div>;
+}
+```
 ## Example: useCookie
 ```tsx
 import { useCookie } from 'dayvster-react-kit';

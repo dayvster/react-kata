@@ -1,3 +1,4 @@
+export {useWindowFocus} from "./useWindowFocus";
 export {useOnScreen} from "./useOnScreen";
 export {useDebounce} from "./useDebounce";
 export {useThrottle} from "./useThrottle";
