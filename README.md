@@ -60,6 +60,7 @@ import { useOnKeyPressed, useDebounce, useLocalStorage } from 'dayvster-react-ki
 | `useUnmount`         | Run a callback once when the component unmounts       |
 | `useCopyToClipboard` | Copy text to clipboard and get success/error status   |
 | `useIdle`            | (WIP) Track if the user is idle for a given timeout. Not yet stable. |
+| `useTheme`           | Track and toggle between light/dark color schemes     |
 
 ## Example
 ```tsx
@@ -158,6 +159,25 @@ import { useIdle } from 'dayvster-react-kit';
 function Demo() {
   const isIdle = useIdle(5000); // 5 seconds
   return <div>{isIdle ? 'Idle' : 'Active'}</div>;
+}
+```
+
+## Example: useTheme
+```tsx
+import React from 'react';
+import { useTheme } from 'dayvster-react-kit';
+
+function Demo() {
+  // Supports auto, light, dark, and custom themes
+  const [theme, setTheme, toggleTheme] = useTheme(["auto", "light", "dark", "solarized"]);
+  return (
+    <div>
+      <span>Current theme: {theme}</span>
+      <button onClick={toggleTheme}>Toggle Theme</button>
+      <button onClick={() => setTheme("solarized")}>Solarized</button>
+      <button onClick={() => setTheme("auto")}>Auto</button>
+    </div>
+  );
 }
 ```
 

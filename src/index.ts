@@ -22,3 +22,4 @@ export {useWhyDidYouUpdate} from "./useWhyDidYouUpdate";
 export {useMount} from "./useMount";
 export {useUnmount} from "./useUnmount";
 export {useCopyToClipboard} from "./useCopyToClipboard";
+export {useTheme} from "./useTheme";
