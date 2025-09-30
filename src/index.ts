@@ -34,3 +34,5 @@ export {useCookie} from "./useCookie";
 export * from './useElementReplace';
 export * from './useScriptLoader';
 export * from './useFocusTrap';
+export * from './useElementSize';
+export * from './useElementPosition';

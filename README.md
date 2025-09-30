@@ -72,6 +72,8 @@ import { useOnKeyPressed, useDebounce, useLocalStorage } from 'dayvster-react-ki
 | `useElementReplace`   | Use a custom React element as a placeholder or replacement |
 | `useScriptLoader`      | Dynamically load an external script and track its status |
 | `useFocusTrap`          | Trap keyboard focus within a container (e.g., modal) |
+| `useElementSize`         | Get the size (width, height) of a DOM element via ref |
+| `useElementPosition`     | Get the position (top, left, right, bottom) of a DOM element via ref |
 ## Example: useShimmer
 ```tsx
 import { useShimmer } from 'dayvster-react-kit';
@@ -118,6 +120,32 @@ function Modal({ open }: { open: boolean }) {
       <button>First</button>
       <input placeholder="Second" />
       <button>Last</button>
+    </div>
+  );
+}
+```
+## Example: useElementSize
+```tsx
+import { useElementSize } from 'dayvster-react-kit';
+
+function SizeDemo() {
+  const [ref, size] = useElementSize();
+  return (
+    <div ref={ref} style={{ width: 200, height: 100, background: '#eee' }}>
+      Width: {size.width}, Height: {size.height}
+    </div>
+  );
+}
+```
+## Example: useElementPosition
+```tsx
+import { useElementPosition } from 'dayvster-react-kit';
+
+function PositionDemo() {
+  const [ref, pos] = useElementPosition();
+  return (
+    <div ref={ref} style={{ position: 'absolute', top: 50, left: 100, background: '#def' }}>
+      Top: {pos.top}, Left: {pos.left}, Right: {pos.right}, Bottom: {pos.bottom}
     </div>
   );
 }
