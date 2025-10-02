@@ -31,7 +31,7 @@
 
 After years of building React apps, I found myself constantly rewriting the same hooks for state, effects, events, and more—across nearly every project. Instead of reinventing the wheel each time, I decided to gather, refine, and open source my favorite utilities in one place. React Kata is for anyone who wants reliable, well-tested hooks that just work, so you can focus on building features instead of boilerplate.
 
-**React Utils** is a growing collection of modern React hooks for state, effects, events, storage, and more. Designed for clarity, performance, and real-world use—with a clean API, SSR compatibility, and TypeScript support. Save time, avoid boilerplate, and ship faster.
+**React Kata** is a growing collection of modern React hooks for state, effects, events, storage, and more. Designed for clarity, performance, and real-world use—with a clean API, SSR compatibility, and TypeScript support. Save time, avoid boilerplate, and ship faster.
 
 ---
 
