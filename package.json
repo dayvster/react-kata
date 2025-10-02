@@ -109,8 +109,8 @@
     }
   },
   "scripts": {
-    "build": "tsup src/**/*.ts --format cjs,esm --dts",
-    "dev": "tsup src/**/*.ts --watch --format cjs,esm --dts",
+    "build": "tsup src/**/*.ts --format cjs,esm --dts --minify --no-sourcemap --clean --target es2018",
+    "dev": "tsup src/**/*.ts --watch --format cjs,esm --dts --target es2018",
     "test": "jest --env=jsdom --testMatch '**/tests/**/*.test.tsx'"
   },
   "peerDependencies": {
@@ -120,10 +120,10 @@
     "@commitlint/cli": "^20.1.0",
     "@commitlint/config-conventional": "^20.0.0",
     "@testing-library/jest-dom": "^6.8.0",
-    "@testing-library/react": "^16.3.0",
+    "@testing-library/react": "^13.4.0",
     "@types/jest": "^30.0.0",
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
     "eslint": "^9.36.0",
     "eslint-plugin-import": "^2.32.0",
     "husky": "^9.1.7",
