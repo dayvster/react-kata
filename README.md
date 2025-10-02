@@ -1,10 +1,10 @@
 <div align="center">
-  <h1>React Utils</h1>
+  <h1>React Kata</h1>
   <p><strong>Modern, type-safe React hooks for state, effects, events, and more.</strong></p>
   <p>
-    <a href="https://www.npmjs.com/package/dayvster-react-kit"><img src="https://img.shields.io/npm/v/dayvster-react-kit?style=flat-square" alt="npm version" /></a>
-    <img src="https://img.shields.io/npm/dm/dayvster-react-kit?style=flat-square" alt="npm downloads" />
-    <img src="https://img.shields.io/npm/types/dayvster-react-kit?style=flat-square" alt="types" />
+  <a href="https://www.npmjs.com/package/react-kata"><img src="https://img.shields.io/npm/v/react-kata?style=flat-square" alt="npm version" /></a>
+  <img src="https://img.shields.io/npm/dm/react-kata?style=flat-square" alt="npm downloads" />
+  <img src="https://img.shields.io/npm/types/react-kata?style=flat-square" alt="types" />
     <img src="https://img.shields.io/badge/code_style-prettier-ff69b4?style=flat-square" alt="code style: prettier" />
     <img src="https://img.shields.io/github/last-commit/dayvster/react-kit?style=flat-square" alt="last commit" />
     <img src="https://img.shields.io/github/issues/dayvster/react-kit?style=flat-square" alt="open issues" />
@@ -29,11 +29,12 @@
 
 **Why this exists:**
 
-After years of building React apps, I found myself constantly rewriting the same hooks for state, effects, events, and more—across nearly every project. Instead of reinventing the wheel each time, I decided to gather, refine, and open source my favorite utilities in one place. React Kit is for anyone who wants reliable, well-tested hooks that just work, so you can focus on building features instead of boilerplate.
+After years of building React apps, I found myself constantly rewriting the same hooks for state, effects, events, and more—across nearly every project. Instead of reinventing the wheel each time, I decided to gather, refine, and open source my favorite utilities in one place. React Kata is for anyone who wants reliable, well-tested hooks that just work, so you can focus on building features instead of boilerplate.
 
 **React Utils** is a growing collection of modern React hooks for state, effects, events, storage, and more. Designed for clarity, performance, and real-world use—with a clean API, SSR compatibility, and TypeScript support. Save time, avoid boilerplate, and ship faster.
 
 ---
+
 
 
 ## 📦 Installation
@@ -41,19 +42,19 @@ After years of building React apps, I found myself constantly rewriting the same
 Install with npm:
 
 ```bash
-npm install dayvster-react-kit
+npm install react-kata
 ```
 
 Or with yarn:
 
 ```bash
-yarn add dayvster-react-kit
+yarn add react-kata
 ```
 
 Or with pnpm:
 
 ```bash
-pnpm add dayvster-react-kit
+pnpm add react-kata
 ```
 
 ---
@@ -72,9 +73,8 @@ pnpm add dayvster-react-kit
 
 Import only the hooks you need:
 
-
 ```tsx
-import { useQueue } from 'dayvster-react-kit';
+import { useQueue } from 'react-kata';
 
 const { queue, enqueue, dequeue, clear, peek, processQueue, processing } = useQueue([1, 2, 3], {
   onProcess: async (item) => {
@@ -137,7 +137,7 @@ enqueue(4); // queue: [1,2,3,4]
 | `useQueue`                | Manage a queue of items with enqueue, dequeue, clear, and peek operations |
 ## Example: useShimmer
 ```tsx
-import { useShimmer } from 'dayvster-react-kit';
+import { useShimmer } from 'react-kata';
 
 function ShimmerDemo() {
   const shimmer = useShimmer(400, 300);
@@ -146,7 +146,7 @@ function ShimmerDemo() {
 ```
 ## Example: useElementReplace
 ```tsx
-import { useElementReplace } from 'dayvster-react-kit';
+import { useElementReplace } from 'react-kata';
 
 function CustomLoaderDemo() {
   const placeholder = useElementReplace(
@@ -160,7 +160,7 @@ function CustomLoaderDemo() {
 }
 ## Example: useScriptLoader
 ```tsx
-import { useScriptLoader } from 'dayvster-react-kit';
+import { useScriptLoader } from 'react-kata';
 
 function ScriptDemo() {
   const { status, error } = useScriptLoader('https://example.com/script.js');
@@ -171,7 +171,7 @@ function ScriptDemo() {
 ```
 ## Example: useFocusTrap
 ```tsx
-import { useFocusTrap } from 'dayvster-react-kit';
+import { useFocusTrap } from 'react-kata';
 
 function Modal({ open }: { open: boolean }) {
   const ref = useFocusTrap(open);
@@ -187,7 +187,7 @@ function Modal({ open }: { open: boolean }) {
 ```
 ## Example: useElementSize
 ```tsx
-import { useElementSize } from 'dayvster-react-kit';
+import { useElementSize } from 'react-kata';
 
 function SizeDemo() {
   const [ref, size] = useElementSize();
@@ -200,7 +200,7 @@ function SizeDemo() {
 ```
 ## Example: useElementPosition
 ```tsx
-import { useElementPosition } from 'dayvster-react-kit';
+import { useElementPosition } from 'react-kata';
 
 function PositionDemo() {
   const [ref, pos] = useElementPosition();
@@ -213,7 +213,7 @@ function PositionDemo() {
 ```
 ## Example: useKeySequence
 ```tsx
-import { useKeySequence } from 'dayvster-react-kit';
+import { useKeySequence } from 'react-kata';
 
 function SecretCodeDemo() {
   useKeySequence(['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown'], () => alert('Konami!'));
@@ -223,7 +223,7 @@ function SecretCodeDemo() {
 ```
 ## Example: useImagePreload
 ```tsx
-import { useImagePreload } from 'dayvster-react-kit';
+import { useImagePreload } from 'react-kata';
 
 function ImageDemo({ src }: { src: string }) {
   const { status, error } = useImagePreload(src);
@@ -234,7 +234,7 @@ function ImageDemo({ src }: { src: string }) {
 ```
 ## Example: useDocumentTitle
 ```tsx
-import { useDocumentTitle } from 'dayvster-react-kit';
+import { useDocumentTitle } from 'react-kata';
 
 function TitleDemo() {
   useDocumentTitle('My Page Title', { restoreOnUnmount: true });
@@ -243,7 +243,7 @@ function TitleDemo() {
 ```
 ## Example: useWindowFocus
 ```tsx
-import { useWindowFocus } from 'dayvster-react-kit';
+import { useWindowFocus } from 'react-kata';
 
 function FocusDemo() {
   const isFocused = useWindowFocus();
@@ -252,7 +252,7 @@ function FocusDemo() {
 ```
 ## Example: useCookie
 ```tsx
-import { useCookie } from 'dayvster-react-kit';
+import { useCookie } from 'react-kata';
 
 function CookieDemo() {
   const [cookie, setCookie, deleteCookie] = useCookie('myCookie');
@@ -269,10 +269,10 @@ function CookieDemo() {
 
 ## Example
 ```tsx
-import { useOnKeyPressed, useDebounce, useLocalStorage, useOnScreen } from 'dayvster-react-kit';
-  const ref = React.useRef(null);
-  const isOnScreen = useOnScreen(ref);
-import { useFetch } from 'dayvster-react-kit';
+import { useOnKeyPressed, useDebounce, useLocalStorage, useOnScreen } from 'react-kata';
+const ref = React.useRef(null);
+const isOnScreen = useOnScreen(ref);
+import { useFetch } from 'react-kata';
 
 function Demo() {
   const { key } = useKeyPress();
@@ -299,7 +299,7 @@ function Demo() {
 ## Example: useWhyDidYouUpdate
 ```tsx
 import React, { useState } from 'react';
-import { useWhyDidYouUpdate } from 'dayvster-react-kit';
+import { useWhyDidYouUpdate } from 'react-kata';
 
 function Demo(props) {
   // Logs changed props to console by default
@@ -316,7 +316,7 @@ function Demo(props) {
 ## Example: useMount
 ```tsx
 import React from 'react';
-import { useMount } from 'dayvster-react-kit';
+import { useMount } from 'react-kata';
 
 function Demo() {
   useMount(() => {
@@ -329,7 +329,7 @@ function Demo() {
 ## Example: useUnmount
 ```tsx
 import React from 'react';
-import { useUnmount } from 'dayvster-react-kit';
+import { useUnmount } from 'react-kata';
 
 function Demo() {
   useUnmount(() => {
@@ -342,7 +342,7 @@ function Demo() {
 ## Example: useCopyToClipboard
 ```tsx
 import React from 'react';
-import { useCopyToClipboard } from 'dayvster-react-kit';
+import { useCopyToClipboard } from 'react-kata';
 
 function Demo() {
   const [copy, { success, error }] = useCopyToClipboard();
@@ -359,7 +359,7 @@ function Demo() {
 ## Example: useIdle
 ```tsx
 import React from 'react';
-import { useIdle } from 'dayvster-react-kit';
+import { useIdle } from 'react-kata';
 
 function Demo() {
   const isIdle = useIdle(5000); // 5 seconds
@@ -370,7 +370,7 @@ function Demo() {
 ## Example: useTheme
 ```tsx
 import React from 'react';
-import { useTheme } from 'dayvster-react-kit';
+import { useTheme } from 'react-kata';
 
 function Demo() {
   // Supports auto, light, dark, and custom themes
@@ -389,7 +389,7 @@ function Demo() {
 ## Example: usePrefersReducedMotion
 ```tsx
 import React from 'react';
-import { usePrefersReducedMotion } from 'dayvster-react-kit';
+import { usePrefersReducedMotion } from 'react-kata';
 
 function Demo() {
   const prefersReducedMotion = usePrefersReducedMotion();
@@ -400,7 +400,7 @@ function Demo() {
 ## Example: useGeolocation
 ```tsx
 import React from 'react';
-import { useGeolocation } from 'dayvster-react-kit';
+import { useGeolocation } from 'react-kata';
 
 function Demo() {
   const { position, error, loading } = useGeolocation();
@@ -418,7 +418,7 @@ function Demo() {
 ## Example: useReload
 ```tsx
 import React from 'react';
-import { useReload } from 'dayvster-react-kit';
+import { useReload } from 'react-kata';
 
 function Demo() {
   // Only reload if user confirms
