@@ -221,14 +221,25 @@ function SecretCodeDemo() {
 }
 ```
 ```
+## Example: useThrottle
+```tsx
+import { useThrottle } from 'react-kata';
+
+function ThrottleDemo({ value }: { value: string }) {
+  // Throttle value updates to every 500ms, with initial default value ''
+  const throttledValue = useThrottle(value, 500, '');
+  return <div>Throttled value: {throttledValue}</div>;
+}
+```
+
 ## Example: useImagePreload
 ```tsx
 import { useImagePreload } from 'react-kata';
 
-function ImageDemo({ src }: { src: string }) {
+function ImageDemo({ src, fallback }: { src: string, fallback?: string }) {
   const { status, error } = useImagePreload(src);
   if (status === 'loading') return <div>Loading...</div>;
-  if (status === 'error') return <div>Error loading image: {error?.message}</div>;
+  if (status === 'error') return fallback ? <img src={fallback} alt="Fallback" /> : <div>Error loading image: {error?.message}</div>;
   return <img src={src} alt="Preloaded" />;
 }
 ```
@@ -278,7 +289,7 @@ function Demo() {
   const { key } = useKeyPress();
   useOnKeyPressed('Enter', () => alert('Enter pressed!'));
   const [value, setValue] = useLocalStorage('my-key', '');
-  const debouncedValue = useDebounce(value, 300);
+  const debouncedValue = useDebounce(value, 300, ''); // '' is the default value
   const { data, error, loading, refetch } = useFetch('https://api.example.com/data');
 
   return (
