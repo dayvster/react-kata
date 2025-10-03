@@ -17,9 +17,9 @@ describe('useDebounce', () => {
     jest.useRealTimers();
   });
 
-  it('should return null on first render', () => {
-    render(<DebounceTestComponent value="a" delay={500} />);
-    expect(screen.getByTestId('debounced-value').textContent).toBe('');
+  it('should return the initial value immediately', () => {
+    render(<DebounceTestComponent value="test" delay={500} />);
+    expect(screen.getByTestId('debounced-value').textContent).toBe('test');
   });
 
   it('should set the value after the delay', () => {
