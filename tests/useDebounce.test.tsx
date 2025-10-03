@@ -22,12 +22,48 @@ describe('useDebounce', () => {
     expect(screen.getByTestId('debounced-value').textContent).toBe('test');
   });
 
-  it('should update the debounced value after the delay', () => {
-    const { rerender } = render(<DebounceTestComponent value="a" delay={300} />);
-    rerender(<DebounceTestComponent value="b" delay={300} />);
-    expect(screen.getByTestId('debounced-value').textContent).toBe('a');
+  it('should set the value after the delay', () => {
+    render(<DebounceTestComponent value="a" delay={500} />);
+
     act(() => {
-      jest.advanceTimersByTime(300);
+      jest.advanceTimersByTime(500);
+    });
+
+    expect(screen.getByTestId('debounced-value').textContent).toBe('a');
+  });
+
+  it('should keep old value until delay has passed', () => {
+    const { rerender } = render(<DebounceTestComponent value="a" delay={500} />);
+
+    act(() => {
+      jest.advanceTimersByTime(500);
+    });
+
+    expect(screen.getByTestId('debounced-value').textContent).toBe('a');
+
+    rerender(<DebounceTestComponent value="b" delay={500} />);
+
+    // still "a" because debounce hasn’t finished
+    expect(screen.getByTestId('debounced-value').textContent).toBe('a');
+
+    act(() => {
+      jest.advanceTimersByTime(500);
+    });
+
+    expect(screen.getByTestId('debounced-value').textContent).toBe('b');
+  });
+
+  it('should handle zero delay immediately', () => {
+    const { rerender } = render(<DebounceTestComponent value="a" delay={0} />);
+
+    act(() => {
+      jest.advanceTimersByTime(0);
+    });
+    expect(screen.getByTestId('debounced-value').textContent).toBe('a');
+
+    rerender(<DebounceTestComponent value="b" delay={0} />);
+    act(() => {
+      jest.advanceTimersByTime(0);
     });
     expect(screen.getByTestId('debounced-value').textContent).toBe('b');
   });
