@@ -2,10 +2,12 @@
 
 Welcome to the documentation for React Kata! This file provides a simple overview of the available hooks and their usage.
 
+
 ## Table of Contents
 - [Installation](#installation)
 - [Available Hooks](#available-hooks)
 - [Usage Examples](#usage-examples)
+- [Hook Documentation Index](#hook-documentation-index)
 - [Contributing](#contributing)
 
 ---
