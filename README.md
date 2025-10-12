@@ -64,6 +64,7 @@ npm install react-kata
 ## Contributing
 
 Pull requests and issues welcome! Please add tests for any new features or bug fixes.
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for details.
 
 ---
 
