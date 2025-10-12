@@ -33,15 +33,17 @@ export function useFocusTrap(enabled: boolean = true) {
       if (focusable.length === 0) return;
       const first = focusable[0];
       const last = focusable[focusable.length - 1];
-      if (e.shiftKey) {
-        if (document.activeElement === first) {
-          last.focus();
-          e.preventDefault();
-        }
-      } else {
-        if (document.activeElement === last) {
-          first.focus();
-          e.preventDefault();
+      if (typeof document !== 'undefined') {
+        if (e.shiftKey) {
+          if (document.activeElement === first) {
+            last.focus();
+            e.preventDefault();
+          }
+        } else {
+          if (document.activeElement === last) {
+            first.focus();
+            e.preventDefault();
+          }
         }
       }
     }

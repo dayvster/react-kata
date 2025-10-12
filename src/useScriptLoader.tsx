@@ -27,45 +27,48 @@ export function useScriptLoader(
   const [ref, setRef] = useState<HTMLScriptElement | null>(null);
 
   useEffect(() => {
-    if (!src) {
+    if (!src || typeof document === 'undefined') {
       setStatus('idle');
       setRef(null);
       return;
     }
-    let script = document.querySelector(`script[src="${src}"]`) as HTMLScriptElement | null;
+    let script: HTMLScriptElement | null = document.querySelector(`script[src="${src}"]`);
     let created = false;
     if (!script) {
       script = document.createElement('script');
       script.src = src;
       Object.entries(options || {}).forEach(([key, value]) => {
-        if (script) {
-          (script as any)[key] = value;
-        }
+        (script as any)[key] = value;
       });
       created = true;
       document.body.appendChild(script);
     }
     setRef(script);
-    
-    if (script.getAttribute('data-loaded') === 'true') {
+
+    if (script && script.getAttribute('data-loaded') === 'true') {
       setStatus('loaded');
     } else {
       setStatus('loading');
     }
+
     const onLoad = () => {
       setStatus('loaded');
-      script.setAttribute('data-loaded', 'true');
+      script && script.setAttribute('data-loaded', 'true');
     };
     const onError = (e: any) => {
       setStatus('error');
       setError(e instanceof Error ? e : new Error('Script load error'));
     };
-    script.addEventListener('load', onLoad);
-    script.addEventListener('error', onError);
+
+    if (script) {
+      script.addEventListener('load', onLoad);
+      script.addEventListener('error', onError);
+    }
     return () => {
-      script?.removeEventListener('load', onLoad);
-      script?.removeEventListener('error', onError);
-      
+      if (script) {
+        script.removeEventListener('load', onLoad);
+        script.removeEventListener('error', onError);
+      }
     };
   }, [src, JSON.stringify(options)]);
 

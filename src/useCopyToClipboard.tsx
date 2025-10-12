@@ -14,6 +14,11 @@ export function useCopyToClipboard(): [
   const copy = useCallback(async (text: string) => {
     setSuccess(false);
     setError(null);
+    if (typeof navigator === 'undefined' || !navigator.clipboard) {
+      setError('Clipboard API not available');
+      setSuccess(false);
+      return;
+    }
     try {
       await navigator.clipboard.writeText(text);
       setSuccess(true);

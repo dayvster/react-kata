@@ -6,8 +6,8 @@ import { useTimeout } from './useTimeout';
  * @param timeout - Time in ms before considered idle (default: 60000)
  * @returns isIdle - boolean
  */
-export function useIdle(timeout: number = 60000): boolean {
-  const [isIdle, setIsIdle] = useState(false);
+export function useIdle(timeout: number = 60000, defaultValue: boolean = false): boolean {
+  const [isIdle, setIsIdle] = useState(defaultValue);
   const [timerKey, setTimerKey] = useState(0);
 
   useTimeout(() => setIsIdle(true), timeout && !isIdle ? timeout : null);
@@ -18,10 +18,14 @@ export function useIdle(timeout: number = 60000): boolean {
   setTimerKey(k => k + 1);
     };
     const events = ['mousemove', 'mousedown', 'keydown', 'touchstart', 'scroll'];
-    events.forEach(e => window.addEventListener(e, reset));
+    if (typeof window !== 'undefined') {
+      events.forEach(e => window.addEventListener(e, reset));
+    }
     reset();
     return () => {
-      events.forEach(e => window.removeEventListener(e, reset));
+      if (typeof window !== 'undefined') {
+        events.forEach(e => window.removeEventListener(e, reset));
+      }
     };
     
   }, [timeout, isIdle]);

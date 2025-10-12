@@ -8,8 +8,8 @@ import * as React from 'react';
  * const inputRef = useRef(null);
  * const isFocused = useFocus(inputRef);
  */
-export const useFocus = (ref: React.RefObject<HTMLElement | null>) => {
-  const [isFocused, setIsFocused] = React.useState(false);
+export const useFocus = (ref: React.RefObject<HTMLElement | null>, defaultValue: boolean = false) => {
+  const [isFocused, setIsFocused] = React.useState(defaultValue);
 
   React.useEffect(() => {
     const node = ref.current;

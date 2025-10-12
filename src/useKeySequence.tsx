@@ -34,16 +34,22 @@ export function useKeySequence(
         lastMatched.current = false;
       }
       if (options?.timeout) {
-        if (timeoutRef.current) window.clearTimeout(timeoutRef.current);
-        timeoutRef.current = window.setTimeout(() => {
-          buffer.current = [];
-        }, options.timeout);
+        if (typeof window !== 'undefined') {
+          if (timeoutRef.current) window.clearTimeout(timeoutRef.current);
+          timeoutRef.current = window.setTimeout(() => {
+            buffer.current = [];
+          }, options.timeout);
+        }
       }
     }
-    window.addEventListener('keydown', onKeyDown);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('keydown', onKeyDown);
+    }
     return () => {
-      window.removeEventListener('keydown', onKeyDown);
-      if (timeoutRef.current) window.clearTimeout(timeoutRef.current);
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('keydown', onKeyDown);
+        if (timeoutRef.current) window.clearTimeout(timeoutRef.current);
+      }
     };
   }, [sequence.join(','), callback, options?.resetOnMatch, options?.timeout]);
 

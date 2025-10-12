@@ -17,12 +17,14 @@ export function useDocumentTitle(
   options?: { restoreOnUnmount?: boolean }
 ) {
   useEffect(() => {
-    const prevTitle = document.title;
-    document.title = title;
-    return () => {
-      if (options?.restoreOnUnmount) {
-        document.title = prevTitle;
-      }
-    };
+    if (typeof document !== 'undefined') {
+      const prevTitle = document.title;
+      document.title = title;
+      return () => {
+        if (options?.restoreOnUnmount) {
+          document.title = prevTitle;
+        }
+      };
+    }
   }, [title, options?.restoreOnUnmount]);
 }

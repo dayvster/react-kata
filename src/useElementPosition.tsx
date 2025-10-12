@@ -21,11 +21,15 @@ export function useElementPosition<T extends HTMLElement = HTMLElement>() {
       setPosition({ top: rect.top, left: rect.left, right: rect.right, bottom: rect.bottom });
     };
     updatePosition();
-    window.addEventListener('resize', updatePosition);
-    window.addEventListener('scroll', updatePosition);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', updatePosition);
+      window.addEventListener('scroll', updatePosition);
+    }
     return () => {
-      window.removeEventListener('resize', updatePosition);
-      window.removeEventListener('scroll', updatePosition);
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', updatePosition);
+        window.removeEventListener('scroll', updatePosition);
+      }
     };
   }, []);
   return [ref, position] as const;

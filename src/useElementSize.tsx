@@ -20,9 +20,13 @@ export function useElementSize<T extends HTMLElement = HTMLElement>() {
       setSize({ width: node.offsetWidth, height: node.offsetHeight });
     };
     updateSize();
-    window.addEventListener('resize', updateSize);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', updateSize);
+    }
     return () => {
-      window.removeEventListener('resize', updateSize);
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', updateSize);
+      }
     };
   }, []);
   return [ref, size] as const;

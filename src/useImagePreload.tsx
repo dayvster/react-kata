@@ -21,17 +21,20 @@ export function useImagePreload(src: string): { status: 'idle' | 'loading' | 'lo
     }
     setStatus('loading');
     setError(null);
-    const img = new window.Image();
-    img.onload = () => setStatus('loaded');
-    img.onerror = (e) => {
-      setStatus('error');
-      setError(new Error('Image failed to load'));
-    };
-    img.src = src;
-    return () => {
-      img.onload = null;
-      img.onerror = null;
-    };
+  const img = typeof window !== 'undefined' ? new window.Image() : null;
+    if (img) {
+      img.onload = () => setStatus('loaded');
+      img.onerror = (e) => {
+        setStatus('error');
+        setError(new Error('Image failed to load'));
+      };
+      img.src = src;
+      return () => {
+        img.onload = null;
+        img.onerror = null;
+      };
+    }
+    return;
   }, [src]);
 
   return { status, error };

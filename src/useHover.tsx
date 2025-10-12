@@ -8,8 +8,8 @@ import * as React from 'react';
  * const ref = useRef(null);
  * const isHovered = useHovered(ref);
  */
-export const useHovered = (ref: React.RefObject<HTMLElement>) => {
-  const [isHovered, setIsHovered] = React.useState(false);
+export const useHovered = (ref: React.RefObject<HTMLElement>, defaultValue: boolean = false) => {
+  const [isHovered, setIsHovered] = React.useState(defaultValue);
 
   React.useEffect(() => {
     const node = ref.current;
