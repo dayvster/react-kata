@@ -16,13 +16,12 @@
 
 ---
 
+
 ## 📚 Table of Contents
 
 - [Installation](#installation)
-- [Features](#-features)
-- [Usage](#-usage)
-- [Hooks Overview](#-hooks-overview)
-- [Examples](#-examples)
+- [Features](#features)
+- [Hooks & Documentation](#hooks--documentation)
 - [Contributing](#contributing)
 - [License](#license)
 
